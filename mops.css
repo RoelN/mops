@@ -1,0 +1,20 @@
+.mops {
+    /* Set up the basics for all versions, e.g. variables */
+}
+
+/* Story, like books or magazine articles */
+.mops.story {
+    /*
+    Eanble old-style figures
+    https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric
+    */
+    font-variant-numeric: oldstyle-nums;
+}
+
+.mops.story abbr {
+    /*
+    Enable small caps for all abbreviations
+    https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps
+    */
+    font-variant-caps: all-small-caps;
+}
