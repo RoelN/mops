@@ -1,27 +1,62 @@
-# MOPS
+# Mildly Opinionated Prose Styles
 
-$ELEVATOR_PITCH goes here.
-
-_“Not a reset, not a boilerplate... simply a mildly opinionated prose stylesheet!”_
+Or MOPS, that's the name. (But we're not just doing prose. There's also technical writing, and data, and perhaps even physics or math?)
 
 Browsers offer a basic typographic system out of the box. But they can do so much more.
 
 Likewise, fonts can offer OpenType features by default, but can do so much more.
 
-MOPS™ will unlock extra typographic features you can just drop into your blog, personal site or $OTHER_USECASES.
+# The big idea
 
-# Use cases
+OpenType features (and some text-related features) are hard to discover. If you don't use them there won't be a problem. But if you _do_ use them, text is going to look better.
 
-Ideally you can use a class to unlock certain features.
+"Better"? Yeah, we think so. You might not like all changes that are happening, but you can easily turn off what you don't like. Discoverability > dictating styles.
 
-Example: oldstyle figures could work nicely in a story, but not in a technical blog post.
+It's better to see your options in action, and then deciding to not use them, than to never even know those options existed.
 
-- Blog
-- Technical writing
-    - Data
-- News article
-- Storytelling
+That's why _mildly_ opinionated.
 
+# Text based
+
+(Meaning, not directly related to the font/OTL features)
+
+hanging-punctuation: start end;
+
+# Font based
+
+## Generic / to decide / misc
+
+- Font synthesis off? (Also e.g. for superscript and their faux user agent superscripts)
+- Do something with ex / cap? E.g. `.size-to-cap-height` utility class?
+
+## Prose
+
+Blog post, book, magazine article.
+
+- Oldstyle figures
+- Small caps in `<abbr>`
+- Titling caps in `<h1>`
+
+- Hyphenation in `<p>`
+- Hanging punctuation in `<p>`
+- `text-wrap: pretty` in `<p>`
+- `text-wrap: balance` in `<h1>` (only advisable for centered text)
+
+## Data
+
+Tables.
+
+- Tabular numbers
+
+## Technical
+
+A.k.a. "not prose".
+
+- Lining numbers
+- Fractions
+- Scientific inferiors (which tag?)
+- Proper superscript for `<sup>`
+- Proper subscript for `<sub>`
 
 # How to use
 
@@ -33,7 +68,15 @@ Perhaps something like this:
 </div>
 ```
 
-The first class, `mops`, sets up the basics of the system. The second class, `mops-story` builds on that and adds styles that work best for "book-like" stories. For example oldstyle figures, hanging punctuation, etc.
+```html
+<table class="mops mops-data">
+   ...
+</table>
+```
+
+The first class, `mops`, sets up the basics of the system. The second class, `mops-story` builds on that and adds styles that work best for "book-like" typography. For example oldstyle figures, hanging punctuation, etc.
+
+Likewise `mops-data` would enable tabular numbers. How about fractions?
 
 # What (not) to do
 
@@ -54,9 +97,3 @@ No:
 In the oldstyle figures example, this only works if the font includes it. We can't know this beforehand. How to deal with that?
 
 Superfutureidea: hook this up to the Wakamai Fondue engine. Folks can drop a font and only the features that are supported will be included.
-
-## To Figure Out / To Do
-
-- Are there already styleguides like this in "classic" typography?
-- Do we go for `font-variant-*` only? Also `font-feature-settings` fallbacks? Let user choose?
-- [Gutenberg](https://github.com/matejlatin/Gutenberg) does something similar. How is MOPS different? Should we offer float, align, horizontal rule styling? I like the [paragraph indenting](https://github.com/matejlatin/Gutenberg/wiki#paragraph-indenting), sounds like something that should be part of a mildly opinionated prose stylesheet!
