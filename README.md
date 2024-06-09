@@ -16,13 +16,7 @@ It's better to see your options in action, and then deciding to not use them, th
 
 That's why _mildly_ opinionated.
 
-# Text based
-
-(Meaning, not directly related to the font/OTL features)
-
-hanging-punctuation: start end;
-
-# Font based
+# The things MOPS does
 
 ## Generic / to decide / misc
 
